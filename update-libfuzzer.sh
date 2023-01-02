@@ -1,21 +1,3 @@
-#!/bin/bash -ex
-
-# Usage:
-#
-#     ./update-libfuzzer $commit_hash
-#
-# Where `$commit_hash` is a commit hash from
-# https://github.com/llvm-mirror/llvm-project
-
-set -ex
-
-cd "$(dirname $0)"
-project_dir="$(pwd)"
-
-tmp_dir="$(mktemp -d)"
-
-git clone https://github.com/llvm/llvm-project.git "$tmp_dir"
-cd "$tmp_dir"
-git checkout "$1"
-rm -rf "$project_dir/libfuzzer/"
-mv "$tmp_dir/compiler-rt/lib/fuzzer/" "$project_dir/libfuzzer/"
+version https://git-lfs.github.com/spec/v1
+oid sha256:e86760e8df31e48e2e35ee38b4c98eaef5129ad9e42d7239dac92cb25d1ade76
+size 425
